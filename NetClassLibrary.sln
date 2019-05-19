@@ -7,6 +7,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ComplexNumbers", "ComplexNu
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MySetCollection", "MySetCollection\MySetCollection.csproj", "{69E7BE4D-A1AD-48F0-BB0F-791AFA8E054F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Streams", "Streams\Streams.csproj", "{338BF0BB-FD24-4EB9-B2B3-E63BD281C578}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SleepingBarberProblem", "SleepingBarberProblem\SleepingBarberProblem.csproj", "{B0FA971B-F68C-447C-9753-CAA3CD6A9155}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +25,14 @@ Global
 		{69E7BE4D-A1AD-48F0-BB0F-791AFA8E054F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{69E7BE4D-A1AD-48F0-BB0F-791AFA8E054F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{69E7BE4D-A1AD-48F0-BB0F-791AFA8E054F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{338BF0BB-FD24-4EB9-B2B3-E63BD281C578}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{338BF0BB-FD24-4EB9-B2B3-E63BD281C578}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{338BF0BB-FD24-4EB9-B2B3-E63BD281C578}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{338BF0BB-FD24-4EB9-B2B3-E63BD281C578}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B0FA971B-F68C-447C-9753-CAA3CD6A9155}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B0FA971B-F68C-447C-9753-CAA3CD6A9155}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B0FA971B-F68C-447C-9753-CAA3CD6A9155}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B0FA971B-F68C-447C-9753-CAA3CD6A9155}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
