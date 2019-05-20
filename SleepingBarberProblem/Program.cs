@@ -10,55 +10,92 @@ namespace SleepingBarberProblem
 {
     class Program
     {
-        static void Main(string[] args)
+        static Mutex mutex = new Mutex();
+
+        static Semaphore barbers = new Semaphore(0, 1);
+
+        static Semaphore waitingRoom = new Semaphore(0, 10);
+        static int waitnng = 0;
+
+        public static void Barber()
         {
-
-        }
-    }
-
-    public class Barber
-    {
-        public bool isBarberChairFree = false;
-        public bool isBarberReady = true;
-        public Queue<Customer> customers = new Queue<Customer>(10);
-
-        public void work()
-        {
-            while(true)
+            while (true)
             {
 
+                if (waitnng == 0)
+                {
+                    Console.WriteLine("Golibroda śpi");
+                }
+                else
+                {
+                    Console.WriteLine("Golibroda idzie po kolejnego klienta");
+                }
+                waitingRoom.WaitOne();
+                mutex.WaitOne();
+
+                waitnng -= 1;
+                barbers.Release();
+                mutex.ReleaseMutex();
+                cutChair();
+                Console.WriteLine();
             }
         }
 
-        public void CutHair()
+        private static void cutChair()
         {
-            Thread.Sleep(2000);
+            Console.WriteLine("Golibroda ścina włosy klienta");
+            Thread.Sleep(3000);
+            Console.WriteLine("Golibroda kończy scinać włosy klienta");
+
         }
 
-        public void GoToSleep()
+        public static void Customer()
         {
-            isBarberChairFree = false;
-            isBarberReady = true;
+            Console.WriteLine("Klient wchodzi do poczekalni...");
+
+            mutex.WaitOne();
+            if (waitnng < 10)
+            {
+                waitnng += 1;
+                waitingRoom.Release(1);
+                mutex.ReleaseMutex();
+                Console.WriteLine("Klient siada w poczekalni...");
+
+                barbers.WaitOne();
+                getHairCut();
+            }
+            else
+            {
+                Console.WriteLine("Ups, zabrakło miejsc... Klient wychodzi");
+
+                mutex.ReleaseMutex();
+            }
+
+            
+        }
+
+        private static void getHairCut()
+        {
+        }
+
+        public static void GenerateCustomers()
+        {
+            foreach(var i in Enumerable.Range(0,20))
+            {
+                var thread = new Thread(Customer);
+                thread.Start();
+            }
+        }
+
+        static void Main(string[] args)
+        {
+            var barberThread = new Thread(Barber);
+            barberThread.Start();
+
+            Thread.Sleep(3000);
+            GenerateCustomers();
+
+            Console.ReadKey();
         }
     }
-
-    public class Customer
-    {
-        string Name { get; set; }
-        Barber MyBarber { get; set; } 
-
-        public Customer(string name, Barber barber)
-        {
-            Name = name;
-            MyBarber = barber;
-        }
-
-        public void WakeUpBarber()
-        {
-            MyBarber.barberChair.WaitOne();
-            MyBarber.
-        }
-    }
-
-
 }

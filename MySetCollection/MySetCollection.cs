@@ -7,27 +7,26 @@ using System.Threading.Tasks;
 
 namespace MySetCollection
 {
-    class MySetCollection
+    class MySetCollection : ArrayList
     {
-        private ArrayList ArrayList { get; set; }
 
-        public MySetCollection()
+        public MySetCollection() : base()
         {
-            ArrayList = new ArrayList();
         }
 
-        public void Add(object toAdd)
+        public override int Add(object toAdd)
         {
-            if (!ArrayList.Contains(toAdd))
+            if (!base.Contains(toAdd))
             {
-                ArrayList.Add(toAdd);
+                return base.Add(toAdd);
             }
 
+            return -1;
         }
 
-        public void Remove(object toDel)
+        public override void Remove(object toDel)
         {
-            ArrayList.Remove(toDel);
+            base.Remove(toDel);
         }
     }
 }
