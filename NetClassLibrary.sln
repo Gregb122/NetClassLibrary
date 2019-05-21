@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Streams", "Streams\Streams.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SleepingBarberProblem", "SleepingBarberProblem\SleepingBarberProblem.csproj", "{B0FA971B-F68C-447C-9753-CAA3CD6A9155}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NetworkProtocols", "NetworkProtocols\NetworkProtocols.csproj", "{C20BB533-B1F4-4FAB-90A9-A59F1B27490C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{B0FA971B-F68C-447C-9753-CAA3CD6A9155}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B0FA971B-F68C-447C-9753-CAA3CD6A9155}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B0FA971B-F68C-447C-9753-CAA3CD6A9155}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C20BB533-B1F4-4FAB-90A9-A59F1B27490C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C20BB533-B1F4-4FAB-90A9-A59F1B27490C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C20BB533-B1F4-4FAB-90A9-A59F1B27490C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C20BB533-B1F4-4FAB-90A9-A59F1B27490C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
