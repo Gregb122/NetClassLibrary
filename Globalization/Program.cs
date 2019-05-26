@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Globalization;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -28,9 +30,6 @@ namespace Globalization
                 Console.WriteLine(DateTime.Now.ToString(es));
                 Console.WriteLine();
             }
-            
-
-            Console.ReadKey();
         }
 
         public static void GetWeekDaysByCulture(CultureInfo culture)
